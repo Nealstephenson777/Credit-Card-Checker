@@ -1,32 +1,47 @@
 const words = new URLSearchParams(window.location.search);
-const num1 = words.get('ccnum');
 
 
+var q = words.get('ccnum')
+var y = q.split('');
+var t = y.splice(-1, 1);
+var z = [...y];
 
- function isNumber(){
-  if(isNaN(num1) || num1.length < 15){
-    return 'The credit card number you have enterd is invalid. Please check the number and try again!';
+var f = z.map((element, index) => {
+  if(index % 2 === 0){
+    return element * 2;
+    }
+    return element;
+    });
+
+var j = f.map(element => {
+  if(element > 9){
+    return element - 9;
+    }
+    return Number(element);
+    });
+
+var s = t.map(element => Number(element));
+var i = s.reduce((acc, ele) => acc += ele,0);
+var m = j.reduce((acc, ele) => acc += ele,0);
+var w = 10 - (m % 10);
+
+function compareCSum() {
+  if(w === i){
+    return 'true';
   }
-  const validateCred = cNum => {
-  let ccNum = [...cNum];
-  let len = ccNum.length;
-  if(len % 2 === 0){
-    ccNum = ccNum.map((ele, idx)=> idx % 2 === 0 ? ele * 2 : ele);
-    ccNum = ccNum.map(ele => ele > 9? ele - 9 : ele);
-    let total = ccNum.reduce((acc, ele) => acc += ele,0);
-    return(total % 10 === 0 ? 'Unfortunately, The credit card number you have provided do met the valid credit card number requirements': '<h2>Congratulations!</h2><p>The credit card number you have provided has met the valid credit card number criterior<p>')
-  } else {
-    ccNum = ccNum.map((ele, idx)=> idx % 2 === 1 ? ele * 2 : ele)
-    ccNum = ccNum.map(ele => ele > 9? ele - 9 : ele);
-    let total = ccNum.reduce((acc, ele) => acc += ele,0);
-     return(total % 10 === 0 ? 'Unfortunately, The credit card number you have provided do met the valid credit card number requirements': '<h2>Congratulations!</h2><p>The credit card number you have provided has met the valid credit card number criterior<p>')
+  return 'false';
+}
+
+
+
+
+function isValid () {
+  if(isNaN(q) || compareCSum() === 'false'){
+    return `<p>Sorry!</p><br><p>Card number: <span>${q}</span> has failed the checking criteria</p>\n <p> Please check the number and try again!</p>`;
   }
-}
-return validateCred(num1.split(''));
+   return `<p>Hurray!</p><br><p>Card number:<span>${q}</span></p> \n <p>is valid.</p>`;
 }
 
+  const display = document.getElementById("screen");
 
-// Assigning the variables with values used in the story
-const display = document.getElementById('screen');
-// Populating the story element with the value of the story variable
-display.innerHTML = isNumber();
+  display.innerHTML = isValid();

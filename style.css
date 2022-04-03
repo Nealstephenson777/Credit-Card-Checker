@@ -33,6 +33,8 @@ body {
  color: white;
 }
 
+
+
 #monitor{
   height: 300px;
   width: 300px;
@@ -41,6 +43,11 @@ body {
 #screen{
   height: 250px;
   width: 250px;
+}
+
+p{
+  line-height: 1;
+  padding-bottom: .5rem;
 }
 
 #stan{
