@@ -23,7 +23,7 @@ var j = f.map(element => {
 var s = t.map(element => Number(element));
 var i = s.reduce((acc, ele) => acc += ele,0);
 var m = j.reduce((acc, ele) => acc += ele,0);
-var w = 10 - (m % 10);
+var w = m % 10;
 
 function compareCSum() {
   if(w === i){
