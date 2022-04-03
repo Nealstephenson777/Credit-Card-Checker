@@ -1,5 +1,6 @@
 body {
-  background-color: black;
+  width: 100%;
+  background-color: rgb(237,237,237);
   font-family: "Open Sans", Arial;
   display: flex;
   align-items: center;
@@ -9,8 +10,15 @@ body {
   line-height: 1.6;
 }
 
+.shade {
+  box-shadow : 3px 4px 3px rgba(0,0,0,0.4),
+             6px 8px 13px rgba(0,0,0,0.1),
+             8px 18px 23px rgba(0,0,0,0.1);
+}
+
 .col {
-  background-color: white;
+  width: 290px;
+  background-color: rgba(255,255,255, 1.0);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -18,8 +26,8 @@ body {
 }
 
 .coll {
-  background-color: black;
-  color: white;
+  background-color: rgb(8,39,245);
+  color: rgba(255,255,255, 1.0);
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -30,14 +38,32 @@ body {
 }
 
  h1 {
- color: white;
+ color: black;
 }
 
+.shadow {
+  text-shadow: 0  .035rem 0 #ccc,
+               0  .045rem 0 #c9c9c9,
+               0  .055rem 0 #bbb,
+               0  .065rem 0 #b9b9b9,
+               0  .075rem 0 #aaa,
+               0  .085rem .035rem rgba(0,0,0,.1),
+               0 0 .075rem rgba(0,0,0,.1),
+               0 .035rem .065rem rgba(0,0,0,.3),
+               0 .055rem .075rem rgba(0,0,0,.2),
+               0 .075rem .55px rgba(0,0,0,.25),
+               0 .65rem .65px rgba(0,0,0,.2),
+               0 1.2rem 1.2rem rgba(0,0,0,.15);
+               font-weight: 900;
+}
 
 
 #monitor{
   height: 300px;
   width: 300px;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
 }
 
 #screen{
@@ -56,13 +82,7 @@ p{
 }
 
 #receiver {
-  width: 200px;
+  width: 270px;
   height:100px;
-  padding: 4px;
-}
-#ccnum{
-  margin-left: 4px;
-}
-#center {
-  margin-left: 75px;
+  text-align: center;
 }

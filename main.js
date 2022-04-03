@@ -37,9 +37,9 @@ function compareCSum() {
 
 function isValid () {
   if(isNaN(q) || compareCSum() === 'false'){
-    return `<p>Sorry!</p><br><p>Card number: <span>${q}</span> has failed the checking criteria</p>\n <p> Please check the number and try again!</p>`;
+    return `<p class="shadow">Sorry!</p><br><p class="shadow" >Card number: <span class="shadow" >${q}</span> has failed the checking criteria</p>\n <p class="shadow" > Please check the number and try again!</p>`;
   }
-   return `<p>Hurray!</p><br><p>Card number:<span>${q}</span></p> \n <p>is valid.</p>`;
+   return `<p class="shadow" >Hurray!</p><br><p class="shadow" >Card number:<class="shadow" span>${q}</span></p> \n <class="shadow" p>is valid.</p>`;
 }
 
   const display = document.getElementById("screen");
